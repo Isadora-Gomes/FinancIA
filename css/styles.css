@@ -3,9 +3,14 @@
     padding: 0;
 }
 
-#lateral{
+#container{
     float: left;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(43, 43, 43);
     width: 70px;
     height: 740px;
+}
+
+#logo-nav{
+    margin: 9px;
+    width: 52px;
 }
