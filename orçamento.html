@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/orçamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div id="lateral">
+        <p>Lateral</p>
+    </div>
+    <section>
+        <img src="img/logo-branca-png.png" id="imgInvest">
+        <div id="orcamentos">
+            <div class="orcamento">
+                <p>Entradas</p>
+                <h5>R$ 00,00</h5>
+            </div>
+            <div class="orcamento">
+                <p>Saidas</p>
+                <h5>R$ 00,00</h5>
+            </div>
+            <div class="orcamento">
+                <p>Total</p>
+                <h5>R$ 00,00</h5>
+            </div>
+        </div>
+        <div id="transacao" class="flex"><button onclick="alerta()" id="botao"><i class="fa-solid fa-plus"></i></button> <p>Nova transação</p></div>
+    </section>
+</body>
+</html>
