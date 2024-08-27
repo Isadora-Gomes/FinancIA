@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#lateral{
+    background-color: rgb(255, 0, 0);
+    width: 70px;
+    height: 740px;
+}
