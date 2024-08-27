@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(235, 239, 243);
+}
+
+#lateral{
+    float: left;
+    background-color: rgb(81, 81, 81);
+    width: 70px;
+    height: 740px;
+}
+section{
+    background: rgb(24,29,82);
+    background: linear-gradient(0deg, rgba(24,29,82,1) 31%, rgba(60,73,171,1) 83%, rgba(94,138,224,1) 100%);
+    height: 30vh;
+}
+#orcamentos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orcamento {
+    color: black;
+    width: 300px;
+    padding: 20px;
+    background-color:white;
+    margin-bottom: 15px;
+    margin: 0 30px;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    height: 100px;
+
+}
+
+
+.orcamento p{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: "Outfit", sans-serif;
+}
+.orcamento h5{
+    font-size: 30px;
+    font-family: "Outfit", sans-serif;
+    font-weight: normal;
+}
+#botao{
+    border-radius: 1000px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(50, 158, 50) ;
+}
+.fa-plus{
+    font-size: 20px;
+    color: white;
+    border: none;
+}
+.flex{
+    display: flex;
+}
+.flex p{
+    margin-top: 12px;
+    margin-left: 15px;
+}
+#transacao{
+    
+    margin-left: 130px;
+    margin-top: 35px;
+}
+#imgInvest{
+    width: 330px;
+    display: flex;
+    margin: 0 auto;
+}
