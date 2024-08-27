@@ -4,6 +4,7 @@
 }
 
 #lateral{
+    float: left;
     background-color: rgb(255, 0, 0);
     width: 70px;
     height: 740px;
