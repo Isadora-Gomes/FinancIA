@@ -6,12 +6,55 @@ body{
     background-color: rgb(235, 239, 243);
 }
 
-#lateral{
+/* barra lateral */
+#container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3px;
+    border-radius: 8px;
     float: left;
-    background-color: rgb(81, 81, 81);
+    background-color: rgb(43, 43, 43);
     width: 70px;
-    height: 740px;
+    height: 99vh;
+    position: fixed;
+    justify-content: space-between;
 }
+
+.container-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-nav{
+    margin-bottom: 10px;
+    width: 52px;
+}
+
+.fa-solid{
+    color: rgb(128, 128, 128);
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+#bars{
+    background-color: rgba(255, 255, 255, 0.101);
+    width: 45px;
+    height: 45px;
+    margin-top: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-bars{
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+/* fim barra lateral */
 section{
     background: rgb(24,29,82);
     background: linear-gradient(0deg, rgba(24,29,82,1) 31%, rgba(60,73,171,1) 83%, rgba(94,138,224,1) 100%);
@@ -56,6 +99,7 @@ section{
     font-size: 20px;
     color: white;
     border: none;
+    margin-top: 0;
 }
 .flex{
     display: flex;
