@@ -5,7 +5,7 @@
 
 #container{
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     margin: 3px;
     border-radius: 8px;
@@ -15,23 +15,32 @@
     height: 99vh;
     position: fixed;
     justify-content: space-between;
+    transition: width 0.4s;
+}
+
+#container:hover{
+    width: 230px;
+}
+
+#container:hover #menu{
+    width: 230px;
 }
 
 .container-side {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
 }
 
 #logo-nav{
     margin-bottom: 10px;
     width: 45px;
+    margin-left: 12px;
 }
 
 .material-symbols-outlined {
     color: rgb(175, 175, 175);
-    font-size: 30px;
+    font-size: 30px !important;
     margin-top: 7px;
     font-variation-settings:
     'FILL' 0,
@@ -40,15 +49,18 @@
     'opsz' 40
 }
 
-#bars{
+#menu{
     background-color: rgba(255, 255, 255, 0.151);
-    width: 80px;
+    width: 69px;
     height: 60px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: width 0.4s;
+    justify-content: left;
+    padding-left: 20px;
 }
 
 .itens-nav{
@@ -58,6 +70,7 @@
     width: 43px;
     height: 43px;
     margin-top: 15px;
+    margin-left: 12px;
     transition: background-color 0.3s;
 }
 
