@@ -23,7 +23,6 @@ function alerta(){
           const valor = Swal.getPopup().querySelector('#valor').value;
           const data = Swal.getPopup().querySelector('#data').value;
 
-          // Validação (opcional):
           if (!valor || !data) {
             Swal.showValidationMessage('Por favor, preencha todos os campos!');
           }
@@ -41,5 +40,7 @@ function alerta(){
         }
       });
 }
+// fim area orçamento
+// area financiamento
 
 
