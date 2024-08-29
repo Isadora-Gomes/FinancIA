@@ -7,7 +7,7 @@
     float: left;
     background-color: rgb(53, 64, 149);
     width: 70px;
-    height: 2000px;
+    height: 3000px;
 }
 section h1{
     text-align: center;
@@ -48,4 +48,8 @@ section h4{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+}
+.formula{
+    text-align: center;
+    font-size: 20px;
 }
