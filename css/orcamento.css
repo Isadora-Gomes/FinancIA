@@ -5,6 +5,10 @@
 body{
     background-color: rgb(235, 239, 243);
 }
+#direita{
+    margin-left: 10vh;
+
+}
 
 /* barra lateral */
 #container{
@@ -123,12 +127,23 @@ section{
     margin-left: 15px;
 }
 #transacao{
-    
-    margin-left: 130px;
+    margin-left: 22vh;
     margin-top: 35px;
 }
 #imgInvest{
-    width: 330px;
+    width: 300px;
     display: flex;
     margin: 0 auto;
+}
+
+#transacoes {
+    width: 80%;
+    margin-top: 3vh;
+    margin-left: 23vh;
+}
+
+#transacoes th, #transacoes td {
+    padding: 8px;
+    text-align: left;
+
 }

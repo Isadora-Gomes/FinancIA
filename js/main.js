@@ -34,11 +34,16 @@ function alerta(){
             tipoObtido = result.value.tipo; 
             dataObtida = result.value.data; 
             valorObtido = result.value.valor; 
-            console.log(valorObtido); 
-            console.log(tipoObtido); 
-            console.log(dataObtida);  
+             
+            document.querySelector('#transacoes tbody').innerHTML += `
+                <tr>
+                    <td>${tipoObtido}</td>
+                    <td>R$ ${valorObtido}</td>
+                    <td>${dataObtida}</td>
+                </tr>
+            `;
         }
-      });
+    });
 }
 // fim area orçamento
 // area financiamento
