@@ -55,21 +55,36 @@
     </header>
     <section>
         <img src="img/logo-branca-png.png" id="imgInvest">
-        <div id="orcamentos">
-            <div class="orcamento">
-                <p>Entradas</p>
-                <h5>R$ 00,00</h5>
+        <div id="direita">
+
+            <div id="orcamentos">
+                <div class="orcamento">
+                    <p>Entradas</p>
+                    <h5>R$ 00,00</h5>
+                </div>
+                <div class="orcamento">
+                    <p>Saidas</p>
+                    <h5>R$ 00,00</h5>
+                </div>
+                <div class="orcamento">
+                    <p>Total</p>
+                    <h5>R$ 00,00</h5>
+                </div>
             </div>
-            <div class="orcamento">
-                <p>Saidas</p>
-                <h5>R$ 00,00</h5>
-            </div>
-            <div class="orcamento">
-                <p>Total</p>
-                <h5>R$ 00,00</h5>
-            </div>
-        </div>
-        <div id="transacao" class="flex"><button onclick="alerta()" id="botao"><i class="fa-solid fa-plus"></i></button> <p>Nova transação</p></div>
-    </section>
+            <div id="transacao" class="flex"><button onclick="alerta()" id="botao"><i class="fa-solid fa-plus"></i></button> <p>Nova transação</p></div>
+            <table id="transacoes">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            </section>
+            </tbody>
+        </table>
+</div>
 </body>
 </html>
