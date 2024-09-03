@@ -34,13 +34,17 @@ function alerta(){
             tipoObtido = result.value.tipo; 
             dataObtida = result.value.data; 
             valorObtido = result.value.valor; 
-             
+            valorInicial = document.getElementsByClassName(".orcamento h5")
+            var x = valorObtido + valorInicial
             document.querySelector('#transacoes tbody').innerHTML += `
                 <tr>
                     <td>${tipoObtido}</td>
                     <td>R$ ${valorObtido}</td>
                     <td>${dataObtida}</td>
                 </tr>
+            `;
+            document.querySelector('.orcamento h5').innerHTML = `
+                R$ ${x}
             `;
         }
     });
