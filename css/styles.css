@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-#sectiouaan{
+#secao-teste{
     margin-left: 77px;
 }
 
@@ -45,7 +45,7 @@
 .material-symbols-outlined {
     color: rgb(175, 175, 175);
     font-size: 30px !important;
-    margin-top: 7px;
+    margin-top: 2px;
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
@@ -62,22 +62,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 20px;
     transition: width 0.4s;
     justify-content: left;
-    padding-left: 20px;
 }
 
 .itens-nav{
     display: flex;
-    justify-content: center;
     border-radius: 5px;
-    width: 43px;
+    width: 35px;
     height: 43px;
     margin-top: 15px;
+    padding-left: 6px;
     margin-left: 12px;
     transition: background-color 0.3s;
 }
 
 .itens-nav:hover{
     background-color: rgba(255, 255, 255, 0.151);
+}
+#container:hover .itens-nav{
+    width: 196px;
+}
+
+.a-sidebar{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.p-sidebar{
+    margin-left: 8px;
+    color: rgb(175, 175, 175);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#container:hover .p-sidebar{
+    opacity: 1;
 }
