@@ -5,43 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../invest/js/main.js"></script>
     <link rel="stylesheet" href="../invest/css/financiamento.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <title>Simulador de Financiamebto</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Simulador de Financiamento</h1>
-        <form>
-            <div class="form-financ">
-                <label for="tpfinanciamento">Tipo de Financiamento:</label>
-                <select id="tpfinanciamento">
-                    <option value="imobiliario">Imobiliário</option>
-                    <option value="veicular">Veicular</option>
-                    <option value="pessoal">Pessoal</option>
-                </select>
+    <header>
+        <div id="container">
+            <div class="container-side">
+                <div id="bars">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                    </a>
+                </div>
+                <div class="itens-nav">
+                    <a href="../Invest/index.html">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                    </a>  
+                </div>
+                <div class="itens-nav">
+                    <a href="../Invest/financiamento.html">
+                        <span class="material-symbols-outlined">
+                            assignment
+                        </span>
+                    </a>
+                </div>
+                <div class="itens-nav">
+                    <a href="../Invest/educ.html">
+                        <span class="material-symbols-outlined">
+                            school
+                        </span>
+                    </a>
+                </div>
+                <div class="itens-nav">
+                    <a href="../Invest/orcamento.html">
+                        <span class="material-symbols-outlined">
+                            savings
+                        </span>
+                    </a>
+                </div>
             </div>
+            <a href="#"><img id="logo-nav" src="../invest/img/invest-logo.png" alt=""></a>
+        </div>
+    </header>
 
-            <div class="form-financ">
-                <label for="total">Valor Total (R$):</label>
-                <input type="text" id="total">
+    <div id="main-content">
+        <div class="bc-financia">
+            <h1>Simulador de Financiamento</h1>
+            <form>
+                <div class="form-financ">
+                    <label for="tpfinanciamento">Tipo de Financiamento:</label>
+                    <select id="tpfinanciamento">
+                        <option value="imobiliario">Imobiliário</option>
+                        <option value="veicular">Veicular</option>
+                        <option value="pessoal">Pessoal</option>
+                    </select>
+                </div>
+                <div class="form-financ">
+                    <label for="total">Valor Total (R$):</label>
+                    <input type="text" id="total">
+                </div>
+                <div class="form-financ">
+                    <label for="prazo">Prazo (Meses):</label>
+                    <input type="range" id="prazo" min="1" max="360">
+                </div>
+                <div class="form-financ">
+                    <label for="taxa">Taxa de Juros (% a.a.):</label>
+                    <input type="text" id="taxa">
+                </div>
+                <button type="button">Calcular</button>
+            </form>
+        </div>
+        <div class="rstd">
+            <div id="cab-rstd">
+                <img src="img/logo-branca-png.png" id="imgInvest">
             </div>
-
-            <div class="form-financ">
-                <label for="prazo">Prazo (Meses):</label>
-                <input type="range" id="prazo" min="1" max="360">
-            </div>
-
-            <div class="form-financ">
-                <label for="taxa">Taxa de Juros (% a.a.):</label>
-                <input type="text" id="taxa">
-            </div>
-
-            <button type="button">Calcular</button>
-        </form>
-
-        <div class="rstd" id="rstd">
             <h2>Resultados da Simulação</h2>
             <p>Valor da Parcela</p>
             <p>Custo Total do Crédito</p>
