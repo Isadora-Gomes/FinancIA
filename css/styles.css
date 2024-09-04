@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body{
+    background-color: rgb(235, 239, 243);
+}
+
 #secao-teste{
     margin-left: 77px;
 }
@@ -34,12 +38,6 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-}
-
-#logo-nav{
-    margin-bottom: 10px;
-    width: 45px;
-    margin-left: 12px;
 }
 
 .material-symbols-outlined {
@@ -94,10 +92,45 @@
 .p-sidebar{
     margin-left: 8px;
     color: rgb(175, 175, 175);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     opacity: 0;
     transition: opacity 0.3s;
 }
 
 #container:hover .p-sidebar{
     opacity: 1;
+}
+
+.box-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: margin-left 0.3s;
+}
+
+#logo-nav{
+    margin-bottom: 10px;
+    width: 45px;
+    margin-left: 12px;
+}
+
+#invest-p-nav{
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 24px;
+    color: rgb(228, 228, 228);
+    font-weight: 500;
+    font-style: italic;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#container:hover #invest-p-nav{
+    opacity: 1;
+}
+
+#container:hover .box-img{
+    margin-left: 27px;
 }
