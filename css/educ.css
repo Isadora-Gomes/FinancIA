@@ -206,7 +206,7 @@ section h4{
     font-weight: bold;
     margin-bottom: 10px;
 }
-.primeiro{
+.opcoes{
     width: 200px;
     height: 250px;
     position: relative;
@@ -218,4 +218,29 @@ section h4{
     font-size: 15px;
     background-color: #395799;
     color: white;
+}
+iframe{
+    margin-top: 30px;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    
+}
+.videos{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+@media (max-width: 760px){
+    .estrategias, .dicas{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .dicas{
+        width: 130px;
+        height: 170px;
+    }
+    iframe{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 }
