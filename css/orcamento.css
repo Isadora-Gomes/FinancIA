@@ -140,6 +140,9 @@ section{
     background: linear-gradient(0deg, rgba(24,29,82,1) 31%, rgba(60,73,171,1) 83%, rgba(94,138,224,1) 100%);
     height: 30vh;
 }
+#direita{
+    margin-left: 77px;
+}
 #orcamentos{
     display: flex;
     justify-content: center;
