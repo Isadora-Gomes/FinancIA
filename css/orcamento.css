@@ -5,15 +5,9 @@
 body{
     background-color: rgb(235, 239, 243);
 }
-#direita{
-    margin-left: 10vh;
-
-}
-
-/* barra lateral */
 #container{
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     margin: 3px;
     border-radius: 8px;
@@ -23,24 +17,27 @@ body{
     height: 99vh;
     position: fixed;
     justify-content: space-between;
+    transition: width 0.4s;
+}
+
+#container:hover{
+    width: 230px;
+}
+
+#container:hover #menu{
+    width: 230px;
 }
 
 .container-side {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#logo-nav{
-    margin-bottom: 10px;
-    width: 45px;
+    align-items: start;
 }
 
 .material-symbols-outlined {
     color: rgb(175, 175, 175);
     font-size: 30px !important;
-    margin-top: 7px;
+    margin-top: 2px;
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
@@ -48,7 +45,7 @@ body{
     'opsz' 40
 }
 
-#bars{
+#menu{
     background-color: rgba(255, 255, 255, 0.151);
     width: 69px;
     height: 60px;
@@ -57,20 +54,85 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 20px;
+    transition: width 0.4s;
+    justify-content: left;
 }
 
 .itens-nav{
     display: flex;
-    justify-content: center;
     border-radius: 5px;
-    width: 43px;
+    width: 35px;
     height: 43px;
     margin-top: 15px;
+    padding-left: 6px;
+    margin-left: 12px;
     transition: background-color 0.3s;
 }
 
 .itens-nav:hover{
     background-color: rgba(255, 255, 255, 0.151);
+}
+#container:hover .itens-nav{
+    width: 196px;
+}
+
+.a-sidebar{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.p-sidebar{
+    margin-left: 8px;
+    color: rgb(175, 175, 175);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#container:hover .p-sidebar{
+    opacity: 1;
+}
+
+.box-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: margin-left 0.3s;
+}
+
+#logo-nav{
+    margin-bottom: 10px;
+    width: 45px;
+    margin-left: 12px;
+}
+
+.a-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#invest-p-nav{
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 24px;
+    color: rgb(228, 228, 228);
+    font-weight: 500;
+    font-style: italic;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#container:hover #invest-p-nav{
+    opacity: 1;
+}
+
+#container:hover .box-img{
+    margin-left: 27px;
 }
 /* fim barra lateral */
 section{

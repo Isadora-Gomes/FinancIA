@@ -18,6 +18,7 @@ body{
     position: fixed;
     justify-content: space-between;
     transition: width 0.4s;
+    top: 0;
 }
 
 #container:hover{
@@ -109,6 +110,12 @@ body{
     margin-bottom: 10px;
     width: 45px;
     margin-left: 12px;
+}
+
+.a-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 #invest-p-nav{
@@ -229,6 +236,7 @@ iframe{
 .videos{
     display: grid;
     grid-template-columns: auto auto auto;
+    top: 0;
 }
 @media (max-width: 760px){
     .estrategias, .dicas{

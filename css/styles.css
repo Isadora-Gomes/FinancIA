@@ -5,6 +5,10 @@
 
 body{
     background-color: rgb(235, 239, 243);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #secao-teste{
@@ -115,6 +119,12 @@ body{
     margin-bottom: 10px;
     width: 45px;
     margin-left: 12px;
+}
+
+.a-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 #invest-p-nav{
