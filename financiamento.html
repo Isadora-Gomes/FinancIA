@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/financiamento.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <title>Simulador de Financiamebto</title>
+    <title>Simulador de Financiamento</title>
 </head>
 <body>
     <header>
@@ -63,7 +62,7 @@
     <div id="main-content">
         <div class="bc-financia">
             <h1>Simulador de Financiamento</h1>
-            <form>
+            <form id="formulario">
                 <div class="form-financ">
                     <label for="tpfinanciamento">Tipo de Financiamento:</label>
                     <select id="tpfinanciamento">
@@ -73,18 +72,19 @@
                     </select>
                 </div>
                 <div class="form-financ">
-                    <label for="total">Valor Total (R$):</label>
-                    <input type="text" id="total">
+                    <label for="capital">Capital (R$):</label>
+                    <input type="text" id="capital">
                 </div>
                 <div class="form-financ">
-                    <label for="prazo">Prazo (Meses):</label>
-                    <input type="range" id="prazo" min="1" max="360">
+                    <label for="tempo">Tempo (Meses):</label>
+                    <input type="range" id="tempo" min="1" max="360" value="60" oninput="acompanharPrazo(this.value);">
+                    <p id="mudar-prazo">60 meses</p>
                 </div>
                 <div class="form-financ">
-                    <label for="taxa">Taxa de Juros (% a.a.):</label>
-                    <input type="text" id="taxa">
+                    <label for="taxa">Taxa de Juros (% ao ano):</label>
+                    <input type="text" id="taxa-inserida">
                 </div>
-                <button type="button">Calcular</button>
+                <button type="submit">Calcular</button>
             </form>
         </div>
         <div class="rstd">
@@ -92,11 +92,33 @@
                 <img src="img/logo-branca-png.png" id="imgInvest">
             </div>
             <h2>Resultados da Simulação</h2>
-            <p>Valor da Parcela</p>
-            <p>Custo Total do Crédito</p>
-            <p>Total de Juros Pagos</p>
+            <p id="montante">Montante:</p>
+            <p id="juros-total">Total de Juros Pagos:</p>
         </div>
     </div>
+
+    <script>
+        function acompanharPrazo(value) {
+            let texto = value == 1 ? ' mês' : ' meses';
+            document.getElementById('mudar-prazo').textContent = value + texto;
+        }
+
+        function calcularFinanciamento(event) {
+            event.preventDefault();
+            let capital = parseInt(document.getElementById('capital').value);
+            let taxaInserida = parseInt(document.getElementById('taxa-inserida').value);
+            let tempo = parseInt(document.getElementById('tempo').value);
+            let taxa = (taxaInserida / 12) / 100;
+            let sjuros = capital * taxa * tempo;
+            let montante = capital + sjuros;
+
+            document.getElementById('montante').textContent = `Montante: R$ ${montante.toFixed(2)}`;
+            document.getElementById('juros-total').textContent = `Total de Juros Pagos: R$ ${sjuros.toFixed(2)}`;
+        }
+
+        const resultCalculo = document.getElementById('formulario');
+        resultCalculo.addEventListener('submit', calcularFinanciamento);
+    </script>
 </body>
 </html>
 
