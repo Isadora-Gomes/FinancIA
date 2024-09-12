@@ -212,3 +212,9 @@ section{
     text-align: left;
 
 }
+#idEntradas h5{
+    color: rgb(17, 203, 17);
+}
+#idSaidas h5{
+    color: red;
+}
