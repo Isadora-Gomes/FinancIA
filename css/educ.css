@@ -210,7 +210,7 @@ strong{
     padding: 15px;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    width: 200px;
+    width: 207px;
     height: 250px;
     position: relative;
     top: 0;
@@ -231,7 +231,7 @@ strong{
 }
 iframe{
     margin-top: 30px;
-    width: 303px;
+    width: 302px;
     height: 200px;
     padding: 10px;  
 }
