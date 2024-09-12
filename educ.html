@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Educação Financeira</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -11,12 +11,56 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <div id="lateral">
-        <p>Lateral</p>
-    </div>
+    <header>
+        <div id="container">
+            <div class="container-side">
+                <div id="menu">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </div>
+                <div class="itens-nav">
+                    <a href="index.html" class="a-sidebar">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                        <p class="p-sidebar">Início</p>
+                    </a>  
+                </div>
+                <div class="itens-nav">
+                    <a href="financiamento.html" class="a-sidebar">
+                        <span class="material-symbols-outlined">
+                            assignment
+                        </span>
+                        <p class="p-sidebar">Simular gastos</p>
+                    </a>
+                </div>
+                <div class="itens-nav">
+                    <a href="educ.html" class="a-sidebar">
+                        <span class="material-symbols-outlined">
+                            school
+                        </span>
+                        <p class="p-sidebar">Educação financeira</p>
+                    </a>
+                </div>
+                <div class="itens-nav">
+                    <a href="orcamento.html" class="a-sidebar">
+                        <span class="material-symbols-outlined">
+                            savings
+                        </span>
+                        <p class="p-sidebar">Gerenciar gastos</p>
+                    </a>
+                </div>
+            </div>
+            <div class="box-img">
+                <img id="logo-nav" src="img/invest-logo.png" alt="">
+                <p id="invest-p-nav">INVEST</p>
+            </div>
+        </div>
+    </header>
     <section>
         <h1>Entenda suas dívidas e os juros</h1>
-        <div id="tipos">
+        <div id="tipos" class="p-texto">
             <h2>Tipos de Juros</h2>
             <p>Antes de falarmos dos tipos de juros, especificamente, vamos a uma definição básica do conceito: Juros são taxas percentuais que incidem sobre um capital investido ou a remuneração recebida pela aplicação do capital, durante um período de tempo. Em outras palavras, é o rendimento ou soma cobrada pelo credor sobre alguma quantia emprestada.</p>
             <p>Isso porque com o tempo o valor do dinheiro muda. Um real hoje não tem o mesmo de um real amanhã, pelo menos não no poder de compra.</p>
@@ -43,18 +87,59 @@
             <p>Os juros sobre capital próprio correspondem ao valor obtido a partir do lucro de um negócio. O montante recebido é, normalmente, dividido entre os sócios e os investidores da empresa.</p>
             <p>Os juros sobre capital próprio se parecem muito com os dividendos, a diferença está no fato de que no primeiro há um desconto do Imposto de Renda, e no segundo o lucro já vem sem impostos, visto que eles já foram pagos.</p>
         </div>
-        <div id="compoem">
+        <div id="compoem" class="p-texto">
             <h2>Como os juros compõem?</h2>
             <p>Aqui você aprende a calcular seus juros e entender como eles podem impactar em suas finanças. Os juros podem ser calculados de duas formas: <strong>simples</strong> e <strong>compostos.</strong></p>
             <h4>Juros simples</h4>
             <p>No caso dos juros simples, os cálculos são feitos sobre o valor original do empréstimo ou investimento.</p>
             <p>Para calcular o juro simples vamos utilizar a fórmula matemática abaixo:</p>
-            <p class="formula">J = C ∙ i ∙ t</p>
+            <p class="formula simples"><strong>J = C ∙ i ∙ t</strong></p>
+            <p class="formula simples"><strong>M = C + J</strong></p>
             <p>J = juros; C = capital; i = taxa; t = tempo</p>
+            <p>M = montante (total da aplicação)</p>
             <h4>Juros compostos</h4>
             <p> Já nos juros compostos, os juros são calculados sobre o valor inicial acrescido dos juros acumulados ao longo do tempo, fazendo com que o montante cresça mais rapidamente. </p>
             <p>Para calcular o juro composto vamos utilizar a fórmula matemática abaixo:</p>
-            <p></p>
+            <p class="formula"><strong>M = C ( 1+i ) t</strong></p>
+            <p>M = montante; C = capital; i = taxa; t = tempo</p>
+        </div>
+        <div>
+            <h2>Estratégias para reduzir suas dívidas</h2>
+            <div id="estrategias">
+                <div class="dicas opcoes">
+                    <h3>01</h3>
+                    <h4>Organizar as finanças </h4>
+                    <p>Anote todos os gastos e receitas, e use um aplicativo para organizar as finanças.</p>
+                </div>
+                <div class="dicas opcoes">
+                    <h3>02</h3>
+                    <h4>Cortar gastos desnecessários  </h4>
+                    <p>Avalie suas despesas e corte aquelas que não são essenciais, como certas assinaturas, compras por impulso, entre outras.</p>
+                </div>
+                <div class="dicas opcoes">
+                    <h3>03</h3>
+                    <h4>Renegociar as dívidas </h4>
+                    <p>Procure negociar com os credores, pois é possível conseguir descontos e taxas de juros mais baixas.</p>
+                </div>
+                <div class="dicas opcoes">
+                    <h3>04</h3>
+                    <h4>Refletir sobre o ocorrido </h4>
+                    <p>Evite repetir os mesmos passos e ficar novamente inadimplente no futuro.</p>
+                </div>
+            </div>
+        </div>
+        <div id="recursos">
+            <h2>Recursos Adicionais</h2>
+            <div class="videos">
+                <iframe src="https://www.youtube.com/embed/Uth75BB0ASU?si=yRYp_80S84RHpPee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/N27xZJj1m-4" title="JUROS SIMPLES: Teoria e Exemplos | Matemática Básica - Aula 30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/yX4F8B_We7Y" title="Juros e Taxa de juros - Diferenças e Semelhanças - MATEMÁTICA FINANCEIRA - Matemática Básica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Qs5XLKqRC0Y" title="Matemática Financeira do Zero - Juros Simples X Juros Composto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/MgAQXEtWZEk" title="Juros no Brasil #1 - O que são juros?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dVnht4XWdgo" title="Tipos de Juros - Aula 06." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/JT3PMW-vwo8" title="NEGOCIAÇÃO DE DÍVIDAS: 7 DICAS para QUITAR AS DÍVIDAS da melhor forma" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/cmz5zfkb4u4" title="Como quitar dívidas com banco? 💰 5 estratégias de negociação!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 </body>
