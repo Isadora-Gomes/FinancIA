@@ -56,7 +56,7 @@ function alerta() {
               let valorInicialSaida = parseFloat(valorInicialSaidaElement.innerHTML.replace('R$', '').replace(',', '.').trim());
               let valorFinalSaida = valorInicialSaida + valorObtido;
 
-              valorInicialSaidaElement.innerHTML = `R$ -${valorFinalSaida.toFixed(2)}`;
+              valorInicialSaidaElement.innerHTML = `R$ ${valorFinalSaida.toFixed(2)}`;
           }
 
           // Adiciona a nova linha ao HTML da tabela
