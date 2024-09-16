@@ -147,6 +147,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 .orcamento {
     color: black;
@@ -205,6 +206,7 @@ section{
     width: 80%;
     margin-top: 3vh;
     margin-left: 23vh;
+    font-family: "Montserrat", sans-serif;
 }
 
 #transacoes th, #transacoes td {
@@ -213,8 +215,18 @@ section{
 
 }
 #idEntradas h5{
-    color: rgb(17, 203, 17);
+    color: rgb(0 128 0);
 }
 #idSaidas h5{
     color: red;
+}
+.botaoExcluir{
+    color: red;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.fa-circle-minus{
+    font-size: 20px;
 }

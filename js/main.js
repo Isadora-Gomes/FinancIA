@@ -34,46 +34,109 @@ function alerta() {
           const tipoObtido = result.value.tipo; 
           const dataObtida = result.value.data; 
           let valorObtido = parseFloat(result.value.valor);
-          //area total
+
+          // Selecionando o elemento do valor total
           const valorInicialElement = document.querySelector('#idTotal h5');
           let valorInicialTotal = parseFloat(valorInicialElement.innerHTML.replace('R$', '').replace(',', '.').trim());
           let valorFinalTotal = valorInicialTotal;
 
           if (tipoObtido === "entrada") {
               valorFinalTotal += valorObtido;
-              //area de entradas 
+
               const valorInicialEntradaElement = document.querySelector('#idEntradas h5');
               let valorInicialEntrada = parseFloat(valorInicialEntradaElement.innerHTML.replace('R$', '').replace(',', '.').trim());
-              let valorFinalEntrada = valorInicialEntrada;
-
-              valorFinalEntrada += valorObtido;
+              let valorFinalEntrada = valorInicialEntrada + valorObtido;
 
               valorInicialEntradaElement.innerHTML = `R$ ${valorFinalEntrada.toFixed(2)}`;
 
           } else if (tipoObtido === "saida") {
               valorFinalTotal -= valorObtido;
-              //area saidas
+
               const valorInicialSaidaElement = document.querySelector('#idSaidas h5');
               let valorInicialSaida = parseFloat(valorInicialSaidaElement.innerHTML.replace('R$', '').replace(',', '.').trim());
-              let valorFinalSaida = valorInicialSaida;
+              let valorFinalSaida = valorInicialSaida + valorObtido;
 
-              valorFinalSaida += valorObtido;
-
-              valorInicialSaidaElement.innerHTML = `R$ ${valorFinalSaida.toFixed(2)}`;
+              valorInicialSaidaElement.innerHTML = `R$ -${valorFinalSaida.toFixed(2)}`;
           }
 
-          document.querySelector('#transacoes tbody').innerHTML += `
+          // Adiciona a nova linha ao HTML da tabela
+          const transacoesTable = document.querySelector('#transacoes tbody');
+          transacoesTable.innerHTML += `
               <tr>
                   <td>${tipoObtido}</td>
                   <td>R$ ${valorObtido.toFixed(2)}</td>
                   <td>${dataObtida}</td>
+                  <td><button class="botaoExcluir"><i class="fa-solid fa-circle-minus" style="color: #ff0000;"></i></button></td>
               </tr>
           `;
 
+          // Atualiza o valor total
+          valorInicialElement.innerHTML = `R$ ${valorFinalTotal.toFixed(2)}`;
+
+          // Ajusta a cor do total
+          if (valorFinalTotal > 0) {
+              valorInicialElement.style.color = 'green';
+          } else if (valorFinalTotal < 0) {
+              valorInicialElement.style.color = 'red';
+          } else{
+            valorInicialElement.style.color = 'black';
+          }
+
           
-          valorInicialElement.innerHTML = `R$ ${valorFinalTotal.toFixed(2)}`; 
-          
+          const botoesExcluir = document.querySelectorAll('.botaoExcluir');
+          for (let i = 0; i < botoesExcluir.length; i++) {
+              botoesExcluir[i].addEventListener('click', function() {
+                // Aparece alert se deseja cancelar
+                Swal.fire({
+                  title: "Você realmente deseja excluir?",
+                  icon: "info",
+                  showDenyButton: true,
+                  confirmButtonText: "Cancelar",
+                  denyButtonText: `Excluir`
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire("Cancelado!", "", "error");
+                  } else if (result.isDenied) {
+                    Swal.fire("Excluido!", "", "success");
+
+                    
+                    const row = this.parentElement.parentElement; 
+                    const valorObtido = parseFloat(row.children[1].textContent.replace('R$', '').trim());
+                    const tipoObtido = row.children[0].textContent;
+
+                    // Atualiza os valores de entrada, saída e total ao excluir a linha
+                    if (tipoObtido === "entrada") {
+                      let valorAtualEntrada = parseFloat(document.querySelector('#idEntradas h5').innerHTML.replace('R$', '').replace(',', '.').trim());
+                      valorAtualEntrada -= valorObtido;
+                      document.querySelector('#idEntradas h5').innerHTML = `R$ ${valorAtualEntrada.toFixed(2)}`;
+                    } else if (tipoObtido === "saida") {
+                      let valorAtualSaida = parseFloat(document.querySelector('#idSaidas h5').innerHTML.replace('R$', '').replace(',', '.').trim());
+                      valorAtualSaida -= valorObtido;
+                      document.querySelector('#idSaidas h5').innerHTML = `R$ ${valorAtualSaida.toFixed(2)}`;
+                    }
+                    
+                    let valorAtualTotal = parseFloat(document.querySelector('#idTotal h5').innerHTML.replace('R$', '').replace(',', '.').trim());
+                    valorAtualTotal = tipoObtido === 'entrada' ? valorAtualTotal - valorObtido : valorAtualTotal + valorObtido;
+                    document.querySelector('#idTotal h5').innerHTML = `R$ ${valorAtualTotal.toFixed(2)}`;
+                    
+                    // Ajusta a cor do total
+                    if (valorAtualTotal > 0) {
+                      document.querySelector('#idTotal h5').style.color = 'green';
+                    } else if (valorAtualTotal < 0) {
+                      document.querySelector('#idTotal h5').style.color = 'red';
+                    } else{
+                      document.querySelector('#idTotal h5').style.color = 'black';
+                    }
+                    
+                    // Remove a linha da tabela
+                    row.remove();
+                  }
+                });
+                  });
+          }
       }
   });
 }
+
+
 // fim area orçamento
