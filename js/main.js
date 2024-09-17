@@ -6,8 +6,8 @@ function alerta() {
       <form class="forms">
         <label for="tipo">Tipo:</label>
         <select id="tipo">
-          <option value="entrada">Entrada</option>
-          <option value="saida">Saída</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Saida">Saída</option>
         </select><br><br>
         
         <label for="valor">Valor:</label>
@@ -44,7 +44,7 @@ function alerta() {
           let valorInicialTotal = parseFloat(valorInicialElement.innerHTML.replace('R$', '').replace(',', '.').trim());
           let valorFinalTotal = valorInicialTotal;
 
-          if (tipoObtido === "entrada") {
+          if (tipoObtido === "Entrada") {
               valorFinalTotal += valorObtido;
 
               const valorInicialEntradaElement = document.querySelector('#idEntradas h5');
@@ -53,7 +53,7 @@ function alerta() {
 
               valorInicialEntradaElement.innerHTML = `R$ ${valorFinalEntrada.toFixed(2)}`;
 
-          } else if (tipoObtido === "saida") {
+          } else if (tipoObtido === "Saida") {
               valorFinalTotal -= valorObtido;
 
               const valorInicialSaidaElement = document.querySelector('#idSaidas h5');
@@ -109,18 +109,18 @@ function alerta() {
                     const tipoObtido = row.children[0].textContent;
 
                     // Atualiza os valores de entrada, saída e total ao excluir a linha
-                    if (tipoObtido === "entrada") {
+                    if (tipoObtido === "Entrada") {
                       let valorAtualEntrada = parseFloat(document.querySelector('#idEntradas h5').innerHTML.replace('R$', '').replace(',', '.').trim());
                       valorAtualEntrada -= valorObtido;
                       document.querySelector('#idEntradas h5').innerHTML = `R$ ${valorAtualEntrada.toFixed(2)}`;
-                    } else if (tipoObtido === "saida") {
+                    } else if (tipoObtido === "Saida") {
                       let valorAtualSaida = parseFloat(document.querySelector('#idSaidas h5').innerHTML.replace('R$', '').replace(',', '.').trim());
                       valorAtualSaida -= valorObtido;
                       document.querySelector('#idSaidas h5').innerHTML = `R$ ${valorAtualSaida.toFixed(2)}`;
                     }
                     
                     let valorAtualTotal = parseFloat(document.querySelector('#idTotal h5').innerHTML.replace('R$', '').replace(',', '.').trim());
-                    valorAtualTotal = tipoObtido === 'entrada' ? valorAtualTotal - valorObtido : valorAtualTotal + valorObtido;
+                    valorAtualTotal = tipoObtido === 'Entrada' ? valorAtualTotal - valorObtido : valorAtualTotal + valorObtido;
                     document.querySelector('#idTotal h5').innerHTML = `R$ ${valorAtualTotal.toFixed(2)}`;
                     
                     // Ajusta a cor do total
