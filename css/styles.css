@@ -173,7 +173,7 @@ h1{
 #home-sect-2{
     padding-left: 77px;
     background-color: #ebeff3;
-    height: 60vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -202,7 +202,7 @@ h1{
 .pss-importantes{
     width: 200px;
     border-radius: 50%;
-    margin-left: 140px;
+    margin-left: 16%;
     margin-bottom: 70px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 } 
@@ -211,7 +211,7 @@ h1{
     display: flex;
     flex-direction: column;
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 15px;
     width: 710px;
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
@@ -226,5 +226,5 @@ h1{
 #home-sect-3{
     padding-left: 77px;
     background-color: #ebeff3;
-    height: 130vh;
+    height: 110vh;
 }
