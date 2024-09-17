@@ -1,8 +1,9 @@
 // área orçamento
 function alerta() {
   Swal.fire({
-      title: 'Informe os dados:',
+      title: '<p class="forms">Informe os dados:<p>',
       html: `
+      <form class="forms">
         <label for="tipo">Tipo:</label>
         <select id="tipo">
           <option value="entrada">Entrada</option>
@@ -14,6 +15,7 @@ function alerta() {
         
         <label for="data">Data:</label>
         <input type="date" id="data">
+      </form>
       `,
       showCancelButton: true,
       confirmButtonText: 'Confirmar',
@@ -23,10 +25,12 @@ function alerta() {
         const valor = Swal.getPopup().querySelector('#valor').value;
         const data = Swal.getPopup().querySelector('#data').value;
 
-        if (!valor || !data) {
-          Swal.showValidationMessage('Por favor, preencha todos os campos!');
+        if (!valor || !data ) {
+          Swal.showValidationMessage('<p class="forms">Por favor, preencha todos os campos!</p>');
         }
-
+        if (valor<0 ) {
+          Swal.showValidationMessage('<p class="forms">Por favor, preencha um valor maior que 0!</p>');
+        }
         return { tipo, valor, data };
       }
   }).then((result) => {
@@ -88,16 +92,16 @@ function alerta() {
               botoesExcluir[i].addEventListener('click', function() {
                 // Aparece alert se deseja cancelar
                 Swal.fire({
-                  title: "Você realmente deseja excluir?",
+                  title: '<p class="forms">Você realmente deseja excluir?</p>',
                   icon: "info",
                   showDenyButton: true,
                   confirmButtonText: "Cancelar",
                   denyButtonText: `Excluir`
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    Swal.fire("Cancelado!", "", "error");
+                    Swal.fire('<p class="forms"> Cancelado!</p>', "", "error");
                   } else if (result.isDenied) {
-                    Swal.fire("Excluido!", "", "success");
+                    Swal.fire('<p class="forms">Excluido!</p>', "", "success");
 
                     
                     const row = this.parentElement.parentElement; 
