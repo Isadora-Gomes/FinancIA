@@ -154,7 +154,7 @@
 h1{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 50px;
-    color: #182768;
+    color: #213691;
 }
 
 #home-first-p{
@@ -173,5 +173,58 @@ h1{
 #home-sect-2{
     padding-left: 77px;
     background-color: #ebeff3;
-    height: 100vh;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#intro-h2{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 34px;
+    color: #213691;
+    width: 960px;
+    margin-bottom: 18px;
+}
+
+#intro-p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    width: 960px;
+}
+
+.imp-na-mat-financeira{
+    display: flex;
+    flex-direction: row;
+}
+
+.pss-importantes{
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 140px;
+    margin-bottom: 70px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} 
+
+.text-pss-importantes{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 710px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+.nome-pss-importantes{
+    margin-bottom: 15px;
+    color: #213691 !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+#home-sect-3{
+    padding-left: 77px;
+    background-color: #ebeff3;
+    height: 130vh;
 }
