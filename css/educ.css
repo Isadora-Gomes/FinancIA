@@ -4,10 +4,6 @@
 }
 body{
     background-color: rgb(235, 239, 243);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 #container{
     display: flex;
@@ -171,6 +167,10 @@ section h2{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
 }
+.p-texto p:not(.formula){
+    text-align: justify;
+
+}
 section h4{
     color: #213691;
     font-weight: 500;
@@ -185,7 +185,6 @@ section h4{
 }
 strong{
     font-size: 22px;
-
 }
 #estrategias{
     display: grid;
