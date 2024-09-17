@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #ebeff3; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #0000004d; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #00000069; 
+}
+
 /* Início da navbar */
 
 #container{
@@ -82,6 +98,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    width: 196px;
 }
 
 .p-sidebar{
