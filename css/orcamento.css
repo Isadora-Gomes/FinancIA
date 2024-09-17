@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background-color: rgb(235, 239, 243);
+    background-color: #ebeff3;
 }
 #container{
     display: flex;
@@ -147,7 +147,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .orcamento {
     color: black;
@@ -166,11 +166,9 @@ section{
 .orcamento p{
     margin-bottom: 10px;
     font-size: 20px;
-    font-family: "Outfit", sans-serif;
 }
 .orcamento h5{
     font-size: 30px;
-    font-family: "Outfit", sans-serif;
     font-weight: normal;
 }
 #botao{
@@ -178,6 +176,8 @@ section{
     width: 40px;
     height: 40px;
     background-color: rgb(50, 158, 50) ;
+    border: 0;
+    cursor: pointer;
 }
 .fa-plus{
     font-size: 20px;
@@ -195,6 +195,7 @@ section{
 #transacao{
     margin-left: 22vh;
     margin-top: 35px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 #imgInvest{
     width: 300px;
@@ -226,7 +227,11 @@ section{
     width: 30px;
     height: 30px;
     cursor: pointer;
+    background-color: #ebeff3;
 }
 .fa-circle-minus{
     font-size: 20px;
+}
+.forms{
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
