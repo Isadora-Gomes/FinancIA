@@ -166,7 +166,10 @@ section h2{
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+}
+.p-texto p:not(.formula){
     text-align: justify;
+
 }
 section h4{
     color: #213691;
@@ -182,7 +185,6 @@ section h4{
 }
 strong{
     font-size: 22px;
-
 }
 #estrategias{
     display: grid;
