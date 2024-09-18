@@ -255,3 +255,24 @@ section{
 .forms{
     font-family: "Plus Jakarta Sans", sans-serif;
 }
+@media (max-width: 768px){
+    #orcamentos {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .orcamento {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    #transacoes {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #transacao {
+        margin-left: 0;
+    }
+}
