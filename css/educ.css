@@ -263,6 +263,9 @@ iframe{
     margin-bottom: 50px;
 }
 @media (max-width: 768px){
+    section{
+        margin-left: 20%;;
+    }
     #estrategias{
         display: grid;
         grid-template-columns:  repeat(1, 1fr);
