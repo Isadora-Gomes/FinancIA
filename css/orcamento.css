@@ -239,8 +239,7 @@ section{
 #idSaidas h5{
     color: red;
 }
-.botaoExcluir{
-    color: red;
+.botaoExcluir, .botaoEditar{
     border: 0;
     width: 30px;
     height: 30px;
@@ -249,6 +248,9 @@ section{
 }
 .fa-circle-minus{
     font-size: 20px;
+}
+.fa-pen{
+    font-size: 16px;
 }
 .forms{
     font-family: "Plus Jakarta Sans", sans-serif;
