@@ -154,7 +154,7 @@ function alerta() {
               console.log(valorOriginal)
 
               Swal.fire({
-                title: '<p class="forms">Edite os dados:</p>', // Linha modificada: título de edição
+                title: '<p class="forms">Edite os dados:</p>', 
                 html: `
                 <form class="forms">
                   <label for="tipo">Tipo:</label>
@@ -218,11 +218,11 @@ function alerta() {
                     valorAtualTotal -= valorEditado;
                   }
 
-                  row.children[0].textContent = tipoEditado; // Linha modificada: atualiza tipo na tabela
-                  row.children[1].textContent = `R$ ${valorEditado.toFixed(2)}`; // Linha modificada: atualiza valor na tabela
-                  row.children[2].textContent = dataEditada; // Linha modificada: atualiza data na tabela
+                  row.children[0].textContent = tipoEditado; 
+                  row.children[1].textContent = `R$ ${valorEditado.toFixed(2)}`; 
+                  row.children[2].textContent = dataEditada;
 
-                  document.querySelector('#idTotal h5').innerHTML = `R$ ${valorAtualTotal.toFixed(2)}`; // Linha modificada: atualiza total
+                  document.querySelector('#idTotal h5').innerHTML = `R$ ${valorAtualTotal.toFixed(2)}`;
 
                   if (valorAtualTotal > 0) {
                     document.querySelector('#idTotal h5').style.color = 'green';
