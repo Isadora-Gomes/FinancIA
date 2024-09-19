@@ -262,17 +262,21 @@ section{
     }
 
     .orcamento {
-        width: 100%;
+        width: 80%;
         margin-bottom: 20px;
         padding: 15px;
     }
 
     #transacoes {
-        width: 90%;
+        width: 80%;
         margin-left: 5%;
     }
 
     #transacao {
         margin-left: 0;
     }
+    #imgInvest{
+        width: 200px;
+    }
+    
 }
