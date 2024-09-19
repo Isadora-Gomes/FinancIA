@@ -97,6 +97,7 @@
             <p id="tp-financ">Tipo de Financiamento:</p>
             <p id="montante">Montante:</p>
             <p id="juros-total">Total de Juros Pagos:</p>
+            <p id="valor-parcelas">Valor das Parcelas: </p>
         </div>
     </div>
 
@@ -137,10 +138,14 @@
             <p id="tp-financ-composto">Tipo de Financiamento:</p>
             <p id="montante-composto">Montante:</p>
             <p id="juros-total-composto">Total de Juros Pagos:</p>
+            <p id="valor-parcelas-composto">Valor das Parcelas: </p>
         </div>
     </div>
 
     <script>
+        let dadosJurosSimples = [];
+        let dadosJurosCompostos = [];
+
         function acompanharPrazo(value) {
             let texto = value == 1 ? ' mês' : ' meses';
             document.getElementById('mudar-prazo').textContent = value + texto;
@@ -160,10 +165,15 @@
             let sjuros = capital * taxa * tempo;
             let montante = capital + sjuros;
             let tipoFinanciamento = document.getElementById('tpfinanciamento').value;
+            let vparcela = montante / tempo;
 
             document.getElementById('tp-financ').textContent = `Tipo de Financiamento: ${tipoFinanciamento.charAt(0).toUpperCase() + tipoFinanciamento.slice(1)}`;
             document.getElementById('montante').textContent = `Montante: R$ ${montante.toFixed(2)}`;
             document.getElementById('juros-total').textContent = `Total de Juros Pagos: R$ ${sjuros.toFixed(2)}`;
+            document.getElementById('valor-parcelas').textContent = `Valor das Parcelas: R$ ${vparcela.toFixed(2)}`;
+
+            dadosJurosSimples.push(montante);
+
         }
 
         function calcularFinanciamento2(event) {
@@ -175,10 +185,15 @@
             let montante = capital * Math.pow((1 + taxa), tempo);
             let cjuros = montante - capital;
             let tipoFinanciamento = document.getElementById('tpfinanciamento-composto').value;
+            let vparcela = montante / tempo;
 
             document.getElementById('tp-financ-composto').textContent = `Tipo de Financiamento: ${tipoFinanciamento.charAt(0).toUpperCase() + tipoFinanciamento.slice(1)}`;
             document.getElementById('montante-composto').textContent = `Montante: R$ ${montante.toFixed(2)}`;
             document.getElementById('juros-total-composto').textContent = `Total de Juros Pagos: R$ ${cjuros.toFixed(2)}`;
+            document.getElementById('valor-parcelas-composto').textContent = `Valor das Parcelas: R$ ${vparcela.toFixed(2)}`;
+
+            dadosJurosCompostos.push(montante);
+
         }
 
         const resultCalculoSimples = document.getElementById('formulario-simples');

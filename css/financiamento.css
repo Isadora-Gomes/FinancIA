@@ -277,3 +277,52 @@ h2, h1 {
     border-radius: 16px 16px 0 0;
     margin-bottom: 20px;
 }
+
+canvas {
+    width: 80px;
+    height: 80px;
+}
+
+/*responsividade*/
+@media (max-width: 768px){
+    #main-content, #main-content2{
+        margin-left: 18%;
+    }
+    #main-content, #main-content2{
+        display: block;
+    }
+    .bc-financia, .rstd {
+        padding: 15px;
+        max-width: 290px;
+        width: 100%;
+    }
+    .rstd{
+        display: flex;
+        flex-direction: column;
+    }
+    #imgInvest{
+        width: 250px;
+        margin-top: 48px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1180px){
+    #main-content, #main-content2{
+        margin-left: 30%;
+    }
+    #main-content, #main-content2{
+        display: block;
+    }
+    .bc-financia, .rstd {
+        padding: 15px;
+        max-width: 350px;
+        width: 100%;
+    }
+    .rstd{
+        display: flex;
+        flex-direction: column;
+    }
+    #imgInvest{
+        width: 290px;
+        margin-top: 20px;
+    }
+}
