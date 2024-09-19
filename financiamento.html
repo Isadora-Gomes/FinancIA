@@ -59,22 +59,23 @@
             </div>
         </div>
     </header>
-
+    
+    <!-- JUROS SIMPLES -->
     <div id="main-content">
         <div class="bc-financia">
-            <h1>Simulador de Financiamento</h1>
-            <form id="formulario">
+            <h1>Simulador de Financiamento (Juros Simples)</h1>
+            <form id="formulario-simples">
                 <div class="form-financ">
                     <label for="tpfinanciamento">Tipo de Financiamento:</label>
                     <select id="tpfinanciamento">
                         <option value="imobiliario">Imobiliário</option>
                         <option value="veicular">Veicular</option>
                         <option value="pessoal">Pessoal</option>
-                    </select>
+                    </select required>
                 </div>
                 <div class="form-financ">
                     <label for="capital">Capital (R$):</label>
-                    <input type="text" id="capital">
+                    <input type="text" id="capital" required>
                 </div>
                 <div class="form-financ">
                     <label for="tempo">Tempo (Meses):</label>
@@ -83,7 +84,7 @@
                 </div>
                 <div class="form-financ">
                     <label for="taxa">Taxa de Juros (% ao ano):</label>
-                    <input type="text" id="taxa-inserida">
+                    <input type="text" id="taxa-inserida" required>
                 </div>
                 <button type="submit">Calcular</button>
             </form>
@@ -92,9 +93,50 @@
             <div id="cab-rstd">
                 <img src="img/logo-branca-png.png" id="imgInvest">
             </div>
-            <h2>Resultados da Simulação</h2>
+            <h2>Resultados da Simulação (Juros Simples)</h2>
+            <p id="tp-financ">Tipo de Financiamento:</p>
             <p id="montante">Montante:</p>
             <p id="juros-total">Total de Juros Pagos:</p>
+        </div>
+    </div>
+
+    <!-- JUROS COMPOSTOS -->
+    <div id="main-content2">
+        <div class="bc-financia">
+            <h1>Simulador de Financiamento (Juros Compostos)</h1>
+            <form id="formulario-composto">
+                <div class="form-financ">
+                    <label for="tpfinanciamento-composto">Tipo de Financiamento:</label>
+                    <select id="tpfinanciamento-composto">
+                        <option value="imobiliario">Imobiliário</option>
+                        <option value="veicular">Veicular</option>
+                        <option value="pessoal">Pessoal</option>
+                    </select required>
+                </div>
+                <div class="form-financ">
+                    <label for="capital-composto">Capital (R$):</label>
+                    <input type="text" id="capital-composto" required>
+                </div>
+                <div class="form-financ">
+                    <label for="tempo-composto">Tempo (Meses):</label>
+                    <input type="range" id="tempo-composto" min="1" max="360" value="60" oninput="acompanharPrazoComposto(this.value);">
+                    <p id="mudar-prazo-composto">60 meses</p>
+                </div>
+                <div class="form-financ">
+                    <label for="taxa-composto">Taxa de Juros (% ao ano):</label>
+                    <input type="text" id="taxa-inserida-composto" required>
+                </div>
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+        <div class="rstd">
+            <div id="cab-rstd">
+                <img src="img/logo-branca-png.png" id="imgInvest">
+            </div>
+            <h2>Resultados da Simulação (Juros Compostos)</h2>
+            <p id="tp-financ-composto">Tipo de Financiamento:</p>
+            <p id="montante-composto">Montante:</p>
+            <p id="juros-total-composto">Total de Juros Pagos:</p>
         </div>
     </div>
 
@@ -102,6 +144,11 @@
         function acompanharPrazo(value) {
             let texto = value == 1 ? ' mês' : ' meses';
             document.getElementById('mudar-prazo').textContent = value + texto;
+        }
+
+        function acompanharPrazoComposto(value) {
+            let texto = value == 1 ? ' mês' : ' meses';
+            document.getElementById('mudar-prazo-composto').textContent = value + texto;
         }
 
         function calcularFinanciamento(event) {
@@ -112,14 +159,33 @@
             let taxa = (taxaInserida / 12) / 100;
             let sjuros = capital * taxa * tempo;
             let montante = capital + sjuros;
+            let tipoFinanciamento = document.getElementById('tpfinanciamento').value;
 
+            document.getElementById('tp-financ').textContent = `Tipo de Financiamento: ${tipoFinanciamento.charAt(0).toUpperCase() + tipoFinanciamento.slice(1)}`;
             document.getElementById('montante').textContent = `Montante: R$ ${montante.toFixed(2)}`;
             document.getElementById('juros-total').textContent = `Total de Juros Pagos: R$ ${sjuros.toFixed(2)}`;
         }
 
-        const resultCalculo = document.getElementById('formulario');
-        resultCalculo.addEventListener('submit', calcularFinanciamento);
+        function calcularFinanciamento2(event) {
+            event.preventDefault();
+            let capital = parseInt(document.getElementById('capital-composto').value);
+            let taxaInserida = parseInt(document.getElementById('taxa-inserida-composto').value);
+            let tempo = parseInt(document.getElementById('tempo-composto').value);
+            let taxa = (taxaInserida / 12) / 100;
+            let montante = capital * Math.pow((1 + taxa), tempo);
+            let cjuros = montante - capital;
+            let tipoFinanciamento = document.getElementById('tpfinanciamento-composto').value;
+
+            document.getElementById('tp-financ-composto').textContent = `Tipo de Financiamento: ${tipoFinanciamento.charAt(0).toUpperCase() + tipoFinanciamento.slice(1)}`;
+            document.getElementById('montante-composto').textContent = `Montante: R$ ${montante.toFixed(2)}`;
+            document.getElementById('juros-total-composto').textContent = `Total de Juros Pagos: R$ ${cjuros.toFixed(2)}`;
+        }
+
+        const resultCalculoSimples = document.getElementById('formulario-simples');
+        resultCalculoSimples.addEventListener('submit', calcularFinanciamento);
+
+        const resultCalculoComposto = document.getElementById('formulario-composto');
+        resultCalculoComposto.addEventListener('submit', calcularFinanciamento2);
     </script>
 </body>
 </html>
-
